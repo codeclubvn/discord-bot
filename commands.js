@@ -7,4 +7,12 @@ const HELLO_COMMAND = {
     type: 1,
 };
 
-InstallGlobalCommands(process.env.APP_ID, [HELLO_COMMAND]);
+const AVATAR_COMMAND = {
+    name: 'avatar',
+    description: 'Generate Code Club Vietnam avatar',
+    type: 1,
+};
+
+const ALL_COMMANDS = []
+
+InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);

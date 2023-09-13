@@ -5,17 +5,21 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "register": "node commands.js",
-    "dev": "nodemon app.js"
+    "start": "node --experimental-modules app.js",
+    "register": "node --experimental-modules commands.js",
+    "dev": "nodemon --experimental-modules app.js"
   },
   "author": "Code Club Vietnam",
   "license": "ISC",
   "dependencies": {
+    "@napi-rs/canvas": "^0.1.44",
     "discord-interactions": "^3.2.0",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "node-fetch": "^3.3.0",
-    "dotenv": "^16.3.1"
+    "sequelize": "^6.33.0",
+    "sqlite3": "^5.1.6"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.4.9",
