@@ -24,14 +24,12 @@ export const execute = async (interaction) => {
         });
 
         if (created) {
-            console.log('duy created')
             return interaction.reply(`Đã đăng ký kênh <#${channelId}> thành công thưa sếp!`);
         }
 
         return interaction.reply(`Kênh <#${channelId}> đã được đăng ký trước đó rồi thưa sếp!`);
     }
     catch (error) {
-        console.log('duy setup-thread', error)
         return interaction.reply('Em hong hỉu');
     }
 }
