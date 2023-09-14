@@ -3,7 +3,7 @@ import { Channels } from '../db.js'
 
 export const name = Events.MessageCreate;
 export const execute = async (message) => {
-    if(message?.author?.bot) return
+    if (message?.author?.bot) return
     const authorName = message?.author?.globalName
     const channelId = message.channelId
     const channels = await Channels.findAll({
@@ -11,7 +11,7 @@ export const execute = async (message) => {
     });
     if (channels?.length > 0) {
         const thread = await message.channel.threads.create({
-            name: `${authorName}-${Date.now()}`,
+            name: `${message.content}`,
             autoArchiveDuration: 60,
             reason: `${authorName} muốn đặt câu hỏi`,
             startMessage: message.id
