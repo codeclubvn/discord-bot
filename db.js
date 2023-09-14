@@ -10,10 +10,10 @@ export const sequelize = new Sequelize(process.env.DB, process.env.USERNAME, pro
 });
 
 export const Channels = sequelize.define('channels', {
-    server: {
+    guildId: {
         type: DataTypes.STRING,
     },
-    channel: {
+    channelId: {
         type: DataTypes.STRING,
         unique: true,
     },

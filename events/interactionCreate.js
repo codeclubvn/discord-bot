@@ -3,7 +3,6 @@ import { Events } from 'discord.js';
 export const name = Events.InteractionCreate
 export const execute = async (interaction) => {
     let command = interaction.client.commands.get(interaction.commandName);
-    console.log('duy InteractionCreate', interaction.commandName, command)
 
     if (!command) {
         console.error(`No command matching ${interaction.commandName} was found.`);
