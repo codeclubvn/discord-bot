@@ -1,5 +1,4 @@
 import { Events } from 'discord.js';
-import { client } from '../startup.js'
 import { Channels } from '../db.js'
 
 export const name = Events.MessageCreate;

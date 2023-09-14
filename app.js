@@ -1,14 +1,8 @@
 // Require the necessary discord.js classes
-import express from 'express';
 import 'dotenv/config';
-import {
-    InteractionType,
-    InteractionResponseType,
-    verifyKeyMiddleware
-} from 'discord-interactions';
 import fs from 'node:fs'
 import path from 'node:path'
-import { Client, Collection, Events, GatewayIntentBits, } from 'discord.js'
+import { Collection } from 'discord.js'
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { client } from './startup.js'
@@ -47,19 +41,5 @@ for (const file of eventFiles) {
         client.on(event.name, (...args) => event.execute(...args));
     }
 }
-
-const app = express();
-app.post('/interactions', verifyKeyMiddleware(process.env.PUBLIC_KEY), (req, res) => {
-    const message = req.body;
-    if (true) {
-        // if (message.type === InteractionType.APPLICATION_COMMAND) {
-        res.send({
-            type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-            data: {
-                content: 'Hello world',
-            },
-        });
-    }
-});
 
 client.login(process.env.DISCORD_TOKEN);
