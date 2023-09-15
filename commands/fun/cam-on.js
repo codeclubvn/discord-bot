@@ -39,5 +39,5 @@ export const execute = async (interaction) => {
         });
     }
 
-    return interaction.reply(`<@${target?.id}> vừa nhậc được lời cảm ơn từ <@${interaction?.user?.id}> ${decription ? `"${decription}"` : ''}! <@${target?.id}> đã nhận được tổng cộng **${count} lời cảm ơn**!`);
+    return interaction.reply(`<@${target?.id}> vừa nhậc được lời cảm ơn từ <@${interaction?.user?.id}>${decription ? `"${decription}"` : ''}! <@${target?.id}> đã nhận được tổng cộng **${count} lời cảm ơn**!`);
 }
