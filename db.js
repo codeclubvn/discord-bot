@@ -4,6 +4,9 @@ export const sequelize = new Sequelize(process.env.DB, process.env.USERNAME, pro
     host: process.env.HOST,
     port: process.env.PORT,
     dialect: 'postgres',
+    dialectOptions: {
+        keepAlive: true,
+    },
     logging: false,
     // SQLite only
     // storage: 'database.sqlite',

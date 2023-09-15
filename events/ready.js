@@ -7,6 +7,7 @@ export const execute = async (client) => {
     try {
         await sequelize.authenticate();
         Channels.sync()
+        console.log('zo db')
     } catch (error) {
         console.error('Unable to connect to the database:', error);
     }
