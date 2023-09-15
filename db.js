@@ -27,3 +27,13 @@ export const Channels = sequelize.define('channels', {
         type: DataTypes.STRING,
     }
 });
+
+export const Appreciate = sequelize.define('appreciate',{
+    userId:{
+        type: DataTypes.STRING,
+        unique: true,
+    },
+    count:{
+        type: DataTypes.INTEGER,
+    }
+})
